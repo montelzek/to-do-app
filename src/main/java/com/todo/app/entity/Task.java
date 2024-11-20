@@ -26,5 +26,18 @@ public class Task {
     @UpdateTimestamp
     private String updatedAt;
 
+    public Task() {
+
+    }
+
+    public Task(String title, String description, Boolean completed, String createdAt,  String updatedAt) {
+        this.title = title;
+        this.description = description;
+        this.completed = completed;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
+
+
 
 }
