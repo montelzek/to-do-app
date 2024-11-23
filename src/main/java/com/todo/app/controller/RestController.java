@@ -28,7 +28,7 @@ public class RestController {
         return "tasks/create";
     }
 
-    @PostMapping
+    @PostMapping("/save")
     public String saveTask(@ModelAttribute Task task) {
         taskService.saveTask(task);
         return "redirect:/tasks";
