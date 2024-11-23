@@ -37,6 +37,11 @@ public class TaskServiceImplementation implements TaskService{
 
     @Override
     public Task saveTask(Task theTask) {
+        if (theTask.getId() != null) {
+            Task existingTask = taskRepository.findById(theTask.getId())
+                    .orElseThrow(() -> new IllegalArgumentException("Task with ID " + theTask.getId() + " not found"));
+            theTask.setCreatedAt(existingTask.getCreatedAt());
+        }
         return taskRepository.save(theTask);
     }
 
