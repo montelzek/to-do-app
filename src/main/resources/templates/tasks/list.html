@@ -24,7 +24,10 @@
             <td th:text="${task.completed} ? 'Yes' : 'No'"></td>
             <td>
                 <form th:action="@{'/tasks/delete/' + ${task.id}}" method="post" onsubmit="return confirm('Are you sure you want to delete this task?');">
-                    <button type="submit">Delete</button>
+                    <button type="submit">DELETE</button>
+                </form>
+                <form th:action="@{'/tasks/edit/' + ${task.id}}" method="get">
+                    <button type="submit">UPDATE</button>
                 </form>
             </td>
         </tr>
